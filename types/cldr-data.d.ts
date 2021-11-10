@@ -4,9 +4,14 @@
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 
 declare module 'cldr-data' {
-    declare function cldrData(path: any, ...args: any[]): any;
-    const availableLocales: any;
-    function all(): any;
-    function entireMainFor(locale: any, ...args: any[]): any;
-    function entireSupplemental(): any;
+    interface CldrData {
+        (path: any, ...args: any[]): any;
+        availableLocales: any;
+        all(): any;
+        entireMainFor(locale: any, ...args: any[]): any;
+        entireSupplemental(): any;
+    }
+
+    declare const cldrData: CldrData;
+    export = cldrData;
 };
